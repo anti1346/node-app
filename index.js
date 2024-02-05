@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
     const hours = String(currentDate.getHours()).padStart(2, '0');
     const minutes = String(currentDate.getMinutes()).padStart(2, '0');
     const seconds = String(currentDate.getSeconds()).padStart(2, '0');
-    const formattedDate = `${year}. ${month}. ${day}. ${hours}:${minutes}:${seconds}`;
+    const formattedDate = `${year}.${month}.${day}. ${hours}:${minutes}:${seconds}`;
     console.log(formattedDate);
 
     res.send(`Hostname: ${hostname}\nInternal IP: ${internalIP}\nExternal IP: ${externalIP}\nCurrent Time: ${formattedDate}\n`);
