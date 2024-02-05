@@ -24,15 +24,19 @@ app.get('/', (req, res) => {
     // 호스트명 가져오기
     const hostname = os.hostname(); 
 
-    // 현재 시간을 YYYY.MM.DD HH:MM:SS 형식으로 포맷팅
+    // // 현재 시간을 YYYY.MM.DD HH:MM:SS 형식으로 포맷팅
+    // const currentDate = new Date();
+    // const year = currentDate.getFullYear();
+    // const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    // const day = String(currentDate.getDate()).padStart(2, '0');
+    // const hours = String(currentDate.getHours()).padStart(2, '0');
+    // const minutes = String(currentDate.getMinutes()).padStart(2, '0');
+    // const seconds = String(currentDate.getSeconds()).padStart(2, '0');
+    // const formattedDate = `${year}.${month}.${day} ${hours}:${minutes}:${seconds}`;
+    // 현재 시간을 KST로 변경하여 포맷팅
     const currentDate = new Date();
-    const year = currentDate.getFullYear();
-    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-    const day = String(currentDate.getDate()).padStart(2, '0');
-    const hours = String(currentDate.getHours()).padStart(2, '0');
-    const minutes = String(currentDate.getMinutes()).padStart(2, '0');
-    const seconds = String(currentDate.getSeconds()).padStart(2, '0');
-    const formattedDate = `${year}.${month}.${day} ${hours}:${minutes}:${seconds}`;
+    const options = { timeZone: 'Asia/Seoul' };
+    const formattedDate = currentDate.toLocaleString('ko-KR', options);
 
     res.send(`Hostname: ${hostname}\nInternal IP: ${internalIP}\nExternal IP: ${externalIP}\nCurrent Time: ${formattedDate}\n`);
   });
