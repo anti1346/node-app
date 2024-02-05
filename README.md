@@ -20,6 +20,10 @@ docker image prune
 ```
 #### 컨테이너를 실행
 ```
+docker run -d -v /etc/localtime:/etc/localtime:ro -p 3000:3000 --name node-app --hostname node-app anti1346/node-app:latest
+```
+#### 컨테이너를 실행(timezone)
+```
 docker run -d -p 3000:3000 --name node-app anti1346/node-app:latest
 ```
 #### docker inspect
