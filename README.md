@@ -6,10 +6,6 @@ docker buildx create --use
 ```
 docker buildx build --platform linux/amd64,linux/arm64 --tag anti1346/node-app:latest --no-cache --push .
 ```
-#### docker inspect
-```
-docker inspect anti1346/node-app:latest --format='{{.Architecture}}'
-```
 #### 모든 컨테이너를 강제로 중지하고 삭제
 ```
 docker rm -f $(docker ps -aq --filter="name=node-app")
@@ -26,11 +22,14 @@ docker image prune
 ```
 docker run -d -p 3000:3000 --name node-app anti1346/node-app:latest
 ```
+#### docker inspect
+```
+docker inspect anti1346/node-app:latest --format='{{.Architecture}}'
+```
 #### HTTP GET 요청
 ```
 curl http://localhost:3000
 ```
-
 
 <details>
 <summary>Docker Build 명령어</summary>
