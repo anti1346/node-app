@@ -32,6 +32,9 @@ curl http://localhost:3000
 ```
 
 
+<details>
+<summary>Docker Build 명령어</summary>
+
 #### Docker 이미지 빌드
 ```
 docker build -t anti1346/node-app:latest . --no-cache
@@ -40,3 +43,4 @@ docker build -t anti1346/node-app:latest . --no-cache
 ```
 docker push anti1346/node-app:latest
 ```
+</details>
