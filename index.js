@@ -19,7 +19,8 @@ app.get('/', (req, res) => {
       return;
     }
     const externalIP = stdout.trim();
-    res.send(`Internal IP: ${internalIP}, External IP: ${externalIP}`);
+    // res.send(`Internal IP: ${internalIP}\n External IP: ${externalIP}\n`);
+    res.send(`Internal IP: ${internalIP}<br>External IP: ${externalIP}<br>`);
   });
 });
 
