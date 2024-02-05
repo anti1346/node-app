@@ -19,7 +19,9 @@ app.get('/', (req, res) => {
       return;
     }
     const externalIP = stdout.trim();
-    res.send(`Internal IP: ${internalIP}\nExternal IP: ${externalIP}\n`);
+    const hostname = os.hostname(); // 호스트명 가져오기
+    const currentTime = new Date().toLocaleString(); // 현재 시간 가져오기
+    res.send(`Hostname: ${hostname}\nInternal IP: ${internalIP}\nExternal IP: ${externalIP}\nCurrent Time: ${currentTime}\n`);
   });
 });
 
