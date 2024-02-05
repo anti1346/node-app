@@ -18,7 +18,7 @@ docker rmi -f $(docker images | grep '<none>' | awk '{ print $3 }')
 ```
 docker image prune
 ```
-#### 컨테이너를 실
+#### 컨테이너를 실행
 ```
 docker run -d -p 3000:3000 --name node-app anti1346/node-app:latest
 ```
