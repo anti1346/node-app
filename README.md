@@ -20,11 +20,16 @@ docker image prune
 ```
 #### 컨테이너를 실행
 ```
-docker run -d -v /etc/localtime:/etc/localtime:ro -p 3000:3000 --name node-app --hostname node-app anti1346/node-app:latest
+docker run -d -p 3000:3000 --name node-app anti1346/node-app:latest
 ```
 #### 컨테이너를 실행(timezone)
 ```
-docker run -d -p 3000:3000 --name node-app anti1346/node-app:latest
+docker run -d \
+-v /etc/localtime:/etc/localtime:ro \
+-p 3000:3000 \
+--name node-app \
+--hostname node-app \
+anti1346/node-app:latest
 ```
 #### docker inspect
 ```
@@ -32,7 +37,7 @@ docker inspect anti1346/node-app:latest --format='{{.Architecture}}'
 ```
 #### HTTP GET 요청
 ```
-curl http://localhost:3000
+curl -fsSL http://localhost:3000
 ```
 
 <details>
