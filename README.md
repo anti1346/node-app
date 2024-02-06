@@ -4,7 +4,9 @@ docker buildx create --use
 ```
 #### docker buildx build & push
 ```
-docker buildx build --platform linux/amd64,linux/arm64 --tag anti1346/node-app:latest --no-cache --push .
+docker buildx build --tag anti1346/node-app:latest . --push \
+--platform linux/amd64,linux/arm64 \
+--no-cache
 ```
 #### 모든 컨테이너를 강제로 중지하고 삭제
 ```
