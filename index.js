@@ -27,7 +27,8 @@ app.get('/', (req, res) => {
     // 현재 시간을 KST로 변경하여 포맷팅
     const currentDate = new Date();
     const options = { timeZone: 'Asia/Seoul' };
-    const formattedDate = currentDate.toLocaleString('ko-KR', options);
+    const formattedDate = currentDate.toLocaleString('en-US', options);
+    // const formattedDate = currentDate.toLocaleString('ko-KR', options);
     // const year = currentDate.getFullYear();
     // const month = String(currentDate.getMonth() + 1).padStart(2, '0');
     // const day = String(currentDate.getDate()).padStart(2, '0');
