@@ -1,5 +1,3 @@
-// index.js
-
 const express = require('express');
 const os = require('os');
 const { exec } = require('child_process');
@@ -27,18 +25,18 @@ app.get('/', (req, res) => {
     // 현재 시간을 KST로 변경하여 포맷팅
     const currentDate = new Date();
     const options = { timeZone: 'Asia/Seoul' };
-    const formattedDate = currentDate.toLocaleString('en-US', options);
-    // const formattedDate = currentDate.toLocaleString('ko-KR', options);
+    const formattedDateStr = currentDate.toLocaleString('en-US', options);
+    // const formattedDateStr = currentDate.toLocaleString('ko-KR', options);
     const year = currentDate.getFullYear();
     const month = String(currentDate.getMonth() + 1).padStart(2, '0');
     const day = String(currentDate.getDate()).padStart(2, '0');
     const hours = String(currentDate.getHours()).padStart(2, '0');
     const minutes = String(currentDate.getMinutes()).padStart(2, '0');
     const seconds = String(currentDate.getSeconds()).padStart(2, '0');
-    const formattedDate = `${year}.${month}.${day}. ${hours}:${minutes}:${seconds}`;
-    console.log(formattedDate);
+    const formattedTimeStr = `${year}.${month}.${day}. ${hours}:${minutes}:${seconds}`;
+    console.log(formattedTimeStr);
 
-    res.send(`Hostname: ${hostname}\nInternal IP: ${internalIP}\nExternal IP: ${externalIP}\nCurrent Time: ${formattedDate}\n`);
+    res.send(`Hostname: ${hostname}\nInternal IP: ${internalIP}\nExternal IP: ${externalIP}\nCurrent Time: ${formattedDateStr}\n`);
   });
 });
 
