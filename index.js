@@ -27,7 +27,19 @@ app.get('/', (req, res) => {
     const options = { timeZone: 'Asia/Seoul' };
     const formattedDateStr = currentDate.toLocaleString('ko-KR', options);
 
-    res.send(`<pre>Hostname: ${hostname}\nInternal IP: ${internalIP}\nExternal IP: ${externalIP}\nCurrent Time: ${formattedDateStr}</pre>`);
+    res.send(`<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>System Info</title>
+</head>
+<body>
+<p>Hostname: ${hostname}</p>
+<p>Internal IP: ${internalIP}</p>
+<p>External IP: ${externalIP}</p>
+<p>Current Time: ${formattedDateStr}</p>
+</body>
+</html>`);
   });
 });
 

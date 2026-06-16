@@ -1,5 +1,5 @@
 # 기본 이미지로 Node.js를 사용합니다.
-FROM node:16
+FROM node:26
 
 # 작업 디렉토리를 설정합니다.
 WORKDIR /usr/src/app
